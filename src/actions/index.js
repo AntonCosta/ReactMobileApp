@@ -1,3 +1,4 @@
+/*
 export const EDIT_EVENT = 'EDIT_EVENT';
 
 export function editEvent(id, title) {
@@ -10,4 +11,7 @@ export function editEvent(id, title) {
 
 export const ActionCreators = Object.assign({},
     editEvent
-);
+);*/
+
+export * from './events';
+export * from './users';

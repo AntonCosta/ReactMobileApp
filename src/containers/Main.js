@@ -10,11 +10,11 @@ export default class Main extends Component {
     render() {
         return (
 
-            <Sidebar
-                leftSidebar={
+            //<Sidebar
+               // leftSidebar={
                     <View>
                     <Button
-                        icon={{name: 'home'}}
+                        /*icon={{name: 'home'}}*/
                         backgroundColor='#03A9F4'
                         onPress={() => {
                             Actions.viewEvents()
@@ -22,18 +22,41 @@ export default class Main extends Component {
                         buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 10}}
                         title='View Events'/>
                     <Button
-                        icon={{name: 'email'}}
+                        //icon={{name: 'add'}}
                         backgroundColor='#03A9F4'
                         onPress={() => {
-                            Linking.openURL('mailto:somethingemail@gmail.com&subject=abcdefg&body=body')
+                            if(this.props.isAdmin) {
+                                Actions.addEvents()
+                            }
+                        }}
+                        buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 10}}
+                        title='Create Events'/>
+
+                    <Button
+                        //icon={{name: 'percent'}}
+                        backgroundColor='#03A9F4'
+                        onPress={() => {
+                        Actions.statistics()
+                        }}
+                        buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 10}}
+                        title='Statistics'/>
+
+                    <Button
+                        /*icon={{name: 'email'}}*/
+                        backgroundColor='#03A9F4'
+                        onPress={() => {
+                            Linking.openURL('mailto:costaanton96@gmail.com&subject=abcdefg&body=body')
                     }}
                         buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
                         title='Contact Us' />
+
+                        {/*<ViewEvents/>*/}
                     </View>
-                }
-                style={{flex: 1}}>
-                <ViewEvents/>
-            </Sidebar>
+                //}
+                //style={{flex: 1}}>
+
+
+           // </Sidebar>
         )
     }
 }
